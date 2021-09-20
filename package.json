@@ -1,12 +1,28 @@
 {
   "name": "learning-semantic-release",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "main": "index.js",
   "repository": "git@github.com:awhitty/learning-semantic-release.git",
   "author": "Austin Whittier <austin.whitt@gmail.com>",
   "license": "MIT",
-  "type" : "module",
+  "type": "module",
   "scripts": {
-    "build": "cp ./src/* ./dist"
+    "build": "cp ./src/* ./dist",
+    "release": "semantic-release"
+  },
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.0",
+    "semantic-release": "^18.0.0"
+  },
+  "release": {
+    "branches": [
+      "release"
+    ],
+    "plugins": [
+      ["@semantic-release/git", {
+        "assets": ["dist/**/*.{js,css}", "package.json"],
+        "message": "Release: ${nextRelease.version}\n\n${nextRelease.notes}"
+      }]
+    ]
   }
 }
