@@ -5,5 +5,8 @@
   "repository": "git@github.com:awhitty/learning-semantic-release.git",
   "author": "Austin Whittier <austin.whitt@gmail.com>",
   "license": "MIT",
-  "type" : "module"
+  "type" : "module",
+  "scripts": {
+    "build": "cp ./src/* ./dist"
+  }
 }
